@@ -10,3 +10,13 @@ def sieve(n):
             nums[(p**2)::p] = [False]*int(np.ceil((n - p**2)/p))
         p += 1
     return nums
+
+
+def sieve_set(n, frozen=False):
+    primes_bool = sieve(n)
+    pset = set()
+    for p, b in enumerate(primes_bool):
+        if b:
+            pset.add(p)
+    if frozen: return frozenset(pset)
+    else: return pset
