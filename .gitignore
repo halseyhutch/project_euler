@@ -2,7 +2,4 @@
 .Rhistory
 .RData
 .Ruserdata
-misc/__pycache__/gcd.cpython-39.pyc
 *.pyc
-*.pyc
-misc/__pycache__/sieve.cpython-39.pyc
