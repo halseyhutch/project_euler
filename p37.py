@@ -3,7 +3,7 @@ from misc.sieve import sieve_set
 
 def p37():
     res = 0
-    # just a guess on size.
+    # iterated on this size until 11 primes were in the final set
     primes = sieve_set(1_000_000, frozen=True)
     for p in primes:
         p = str(p)
