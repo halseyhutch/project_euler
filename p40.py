@@ -1,4 +1,3 @@
-from re import I
 def p40():
     nums = "".join([str(x) for x in range(1, 200_000)])
     res = 1

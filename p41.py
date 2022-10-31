@@ -1,4 +1,3 @@
-from wsgiref import simple_server
 from misc.sieve import sieve
 from itertools import permutations
 
