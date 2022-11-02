@@ -8,14 +8,10 @@ def p35(limit):
     for p, b in enumerate(primes):
         if b:
             pt = (p // 10) + (p % 10)*10**int(np.log10(p))
-            violation = False
             while pt != p:
-                if not primes[pt]:
-                    violation = True
-                    break
+                if not primes[pt]: break
                 pt = (pt // 10) + (pt % 10)*10**int(np.log10(pt))
-            if not violation:
-                res += 1
+            else: res += 1
     return res
 
 

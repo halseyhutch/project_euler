@@ -20,3 +20,8 @@ def sieve_set(n, frozen=False):
             pset.add(p)
     if frozen: return frozenset(pset)
     else: return pset
+
+
+def sieve_list(n):
+    primes_bool = sieve(n)
+    return [p for p, b in enumerate(primes_bool) if b]
