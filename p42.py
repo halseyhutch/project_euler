@@ -7,7 +7,8 @@ def p42():
     for n in range(1, 100):
         tri_nums.add(n*(n+1)//2)
 
-    words = open('data/p42.txt').read().replace('"', '').split(',')
+    with open('data/p42.txt') as f:
+        words = f.read().replace('"', '').split(',')
     for word in words:
         score = sum(map(lambda x: ord(x) - 96, word.lower()))
         if score in tri_nums:
