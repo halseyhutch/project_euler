@@ -1,5 +1,5 @@
 import numpy as np
-from misc.sieve import sieve
+from misc.primes import sieve
 
 
 # https://en.wikipedia.org/wiki/Repeating_decimal

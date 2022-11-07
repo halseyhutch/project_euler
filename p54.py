@@ -117,13 +117,13 @@ class Hand:
 
 def p54():
     with open('data/p54.txt') as f:
-        res = 0
         hands_data = f.read().split('\n')
-        for hands in hands_data:
-            hands = hands.split()
-            h1 = Hand(hands[:5])
-            h2 = Hand(hands[5:])
-            res += h1.compare(h2)
+    res = 0
+    for hands in hands_data:
+        hands = hands.split()
+        h1 = Hand(hands[:5])
+        h2 = Hand(hands[5:])
+        res += h1.compare(h2)
     return res
 
 

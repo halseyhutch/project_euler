@@ -2,7 +2,7 @@
 # group is one or two digits. need to consider three, six, nine.. digit groups.
 # also know that the last digit cannot be in the group
 # otherwise there will be multiples of two or five.
-from misc.sieve import sieve
+from misc.primes import sieve
 
 
 def p51():

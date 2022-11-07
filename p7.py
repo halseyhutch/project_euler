@@ -1,4 +1,4 @@
-from misc.sieve import sieve
+from misc.primes import sieve
 import numpy as np
 
 def p7(n):

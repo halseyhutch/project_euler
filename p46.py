@@ -1,5 +1,5 @@
 from math import sqrt
-from misc.sieve import sieve
+from misc.primes import sieve
 
 
 def p46():

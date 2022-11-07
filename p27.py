@@ -1,4 +1,4 @@
-from misc.sieve import sieve_set
+from misc.primes import sieve_set
 
 
 def p27():

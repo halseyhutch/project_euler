@@ -1,5 +1,5 @@
 from collections import defaultdict
-from misc.sieve import sieve_list
+from misc.primes import sieve_list
 
 
 def p49():

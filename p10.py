@@ -1,4 +1,4 @@
-from misc.sieve import sieve
+from misc.primes import sieve
 
 
 def p10(limit):
