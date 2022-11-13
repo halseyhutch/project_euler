@@ -1,10 +1,10 @@
 from misc.gcd import gcd
-import numpy as np
+from math import sqrt
 
 
 # https://en.wikipedia.org/wiki/Pythagorean_triple
 def p9(total):
-    max_m = int(np.sqrt(2*total + 1) - 1)//2
+    max_m = int(sqrt(2*total + 1) - 1)//2
     for m in range(2, max_m + 1):
         max_n = (total//(2*m)) - m
         for n in range(1, min(m, max_n + 1)):
