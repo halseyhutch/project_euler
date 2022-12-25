@@ -16,12 +16,12 @@ def p82(matrix):
         for i in range(m):
             D[i, j] = matrix[i, j] + D[i, j - 1]
 
-        # up
+        # down
         for i in range(1, m):
             D[i, j] = min(D[i, j], D[i - 1, j] + matrix[i, j])
         
-        # down
-        for i in reversed(range(m - 1)):
+        # up
+        for i in range(m - 2, -1, -1):
             D[i, j] = min(D[i, j], D[i + 1, j] + matrix[i, j])
         
     return np.min(D[:, n - 1])

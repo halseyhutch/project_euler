@@ -62,7 +62,8 @@ def p83(matrix):
     return distances[m, n]
 
 
-# the base Python implementation was 4x faster on p81.
+# originally did this in base python p81.
+# the base Python implementation was 4x faster compared to numpy on same prob.
 # not a great numpy application with this method.
 start_time = time.time()
 print(p83(matrix))
