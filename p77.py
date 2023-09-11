@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 from misc.primes import sieve_list
 from functools import cache
 
@@ -6,6 +7,15 @@ PRIMES = sieve_list(100)
 
 
 @cache
+=======
+# this is the same problem as #31
+import functools
+from misc.primes import sieve_list
+PRIMES = sieve_list(100)
+
+
+@functools.cache
+>>>>>>> Stashed changes
 def ways(n, ci):
     if n < 0: return 0
     if n == 0: return 1
@@ -16,6 +26,7 @@ def ways(n, ci):
     return res
 
 
+<<<<<<< Updated upstream
 def p77(n):
     res = 4
     while ways(res, 0) < n:
@@ -24,3 +35,14 @@ def p77(n):
 
 
 print(p77(5000))
+=======
+def p77(limit):
+    n = 1
+    while ways(n, 0) < limit:
+        n += 1
+    return n
+
+
+if __name__ == '__main__':
+    print(p77(5_000))
+>>>>>>> Stashed changes
