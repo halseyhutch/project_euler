@@ -24,7 +24,7 @@ def sieve_set(n, frozen=True):
 
 def sieve_list(n, start=0):
     primes_bool = sieve(n)
-    return [p for p, b in enumerate(primes_bool[start:]) if b]
+    return [p + start for p, b in enumerate(primes_bool[start:]) if b]
 
 
 # https://en.wikipedia.org/wiki/Miller%E2%80%93Rabin_primality_test#Miller_test
