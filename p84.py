@@ -65,7 +65,6 @@ COMMUNITY_CHEST = [
     None,
     None
 ]
-random.shuffle(COMMUNITY_CHEST)
 
 CHANCE = [
     'GO',
@@ -85,7 +84,6 @@ CHANCE = [
     None,
     None
 ]
-random.shuffle(CHANCE)
 
 
 class MonopolyToken:
@@ -93,7 +91,10 @@ class MonopolyToken:
         self.die_sides = die_sides
         self.square = 'GO'
         self.num_doubles = 0
+        self.community_chest_deck = random.sample(COMMUNITY_CHEST,
+                                                  len(COMMUNITY_CHEST))
         self.community_chest_index = 0
+        self.chance_deck = random.sample(CHANCE, len(CHANCE))
         self.chance_index = 0
         self.debug = debug
 
@@ -138,9 +139,9 @@ class MonopolyToken:
 
         # community chest
         if self.square in ['CC1', 'CC2', 'CC3']:
-            card = COMMUNITY_CHEST[self.community_chest_index]
+            card = self.community_chest_deck[self.community_chest_index]
             self.community_chest_index += 1
-            self.community_chest_index %= len(COMMUNITY_CHEST)
+            self.community_chest_index %= len(self.community_chest_deck)
             if card is not None:
                 self.square = card
             if self.debug:
@@ -148,9 +149,9 @@ class MonopolyToken:
         
         # chance
         if self.square in ['CH1', 'CH2', 'CH3']:
-            card = CHANCE[self.chance_index]
+            card = self.chance_deck[self.chance_index]
             self.chance_index += 1
-            self.chance_index %= len(CHANCE)
+            self.chance_index %= len(self.chance_deck)
             if card == 'BACK 3':
                 self.square = SQUARES[i - 3]
             elif card == 'NEXT R':
@@ -181,7 +182,7 @@ def p84(die_sides=6, sample_size=100000):
         squares.append(token.square)
     most_common = Counter(squares).most_common(3)
     print(most_common)
-    return ''.join([str(SQUARES.index(k)) for k, v in most_common])
+    return ''.join([str(SQUARES.index(k)) for k, _ in most_common])
 
 
 print(p84(die_sides=4, sample_size=1_000_000))
