@@ -86,15 +86,18 @@ CHANCE = [
 ]
 
 
+def shuffle(x):
+    return random.sample(x, k=len(x))
+
+
 class MonopolyToken:
     def __init__(self, die_sides=6, debug=False):
         self.die_sides = die_sides
         self.square = 'GO'
         self.num_doubles = 0
-        self.community_chest_deck = random.sample(COMMUNITY_CHEST,
-                                                  len(COMMUNITY_CHEST))
+        self.community_chest_deck = shuffle(COMMUNITY_CHEST)
         self.community_chest_index = 0
-        self.chance_deck = random.sample(CHANCE, len(CHANCE))
+        self.chance_deck = shuffle(CHANCE)
         self.chance_index = 0
         self.debug = debug
 
@@ -185,4 +188,5 @@ def p84(die_sides=6, sample_size=100000):
     return ''.join([str(SQUARES.index(k)) for k, _ in most_common])
 
 
-print(p84(die_sides=4, sample_size=1_000_000))
+if __name__ == '__main__':
+    print(p84(die_sides=4, sample_size=1_000_000))
